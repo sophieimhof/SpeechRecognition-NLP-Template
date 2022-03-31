@@ -10,6 +10,8 @@ import Speech
 import SwiftUI
 
 class SpeechRecognizer: ObservableObject {
+    
+    //Possible set of errors that could occur
     enum RecognizerError: Error {
         case nilRecognizer
         case notAuthorizedToRecognize
@@ -26,6 +28,7 @@ class SpeechRecognizer: ObservableObject {
         }
     }
     
+    //initialize transcript text
     var transcript: String = ""
     
     private var audioEngine: AVAudioEngine?
@@ -33,6 +36,7 @@ class SpeechRecognizer: ObservableObject {
     private var task: SFSpeechRecognitionTask?
     private let recognizer: SFSpeechRecognizer?
     
+    //initialize speech recognizer object and throw errors if non-existent or do not have correct authorization
     init() {
         recognizer = SFSpeechRecognizer()
         
@@ -57,6 +61,7 @@ class SpeechRecognizer: ObservableObject {
         reset()
     }
     
+    //transcribe current live audio session
     func transcribe() {
         DispatchQueue(label: "Speech Recognizer Queue", qos: .background).async { [weak self] in
             guard let self = self, let recognizer = self.recognizer, recognizer.isAvailable else {
@@ -76,10 +81,12 @@ class SpeechRecognizer: ObservableObject {
         }
     }
     
+    //stop transcribing current live audio
     func stopTranscribing() {
         reset()
     }
     
+    //reset audio engine and tasks
     func reset() {
         task?.cancel()
         audioEngine?.stop()
@@ -88,6 +95,7 @@ class SpeechRecognizer: ObservableObject {
         task = nil
     }
     
+    //prepare audio engine to access task
     private static func prepareEngine() throws -> (AVAudioEngine, SFSpeechAudioBufferRecognitionRequest) {
         let audioEngine = AVAudioEngine()
         
@@ -109,6 +117,7 @@ class SpeechRecognizer: ObservableObject {
         return (audioEngine, request)
     }
     
+    //handle possible errors with speech recognizer result
     private func recognitionHandler(result: SFSpeechRecognitionResult?, error: Error?) {
         let receivedFinalResult = result?.isFinal ?? false
         let receivedError = error != nil
@@ -123,10 +132,12 @@ class SpeechRecognizer: ObservableObject {
         }
     }
     
+    //set transcript
     private func speak(_ message: String) {
         transcript = message
     }
     
+    //display error in transcipt if one occurs
     private func speakError(_ error: Error) {
         var errorMessage = ""
         if let error = error as? RecognizerError {
