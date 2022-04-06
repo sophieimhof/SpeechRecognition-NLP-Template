@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Text_Similarities" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="word" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="tcF-OL-h7L">
+                                <rect key="frame" x="59" y="158" width="97" height="34"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Find Similar Words" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qu6-PF-Dt9">
+                                <rect key="frame" x="123" y="71" width="168" height="35"/>
+                                <color key="backgroundColor" red="1" green="0.86923315828043823" blue="0.91648865310587202" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" systemColor="labelColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAf-CS-z7B">
+                                <rect key="frame" x="33" y="620" width="54" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Go!"/>
+                                <connections>
+                                    <action selector="sentButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m0i-jx-kBt"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="sentence 1" textAlignment="natural" minimumFontSize="16" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="5Jg-Zp-aEJ">
+                                <rect key="frame" x="33" y="482.33333333333331" width="325" height="33.999999999999943"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="sentence 2" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="OqT-Tz-9pq">
+                                <rect key="frame" x="33" y="559" width="325" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Similar words will appear here" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gML-dU-2bd">
+                                <rect key="frame" x="59" y="269" width="253" height="120"/>
+                                <color key="backgroundColor" red="1" green="0.99620222629940969" blue="0.84790102967732017" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Distance between sentences will appear here!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4Q-Ke-jbJ">
+                                <rect key="frame" x="33" y="744" width="349" height="51"/>
+                                <color key="backgroundColor" red="1" green="0.99620222629999999" blue="0.84790102970000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compare Sentences" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vlr-02-Wjr">
+                                <rect key="frame" x="118" y="412" width="155" height="21"/>
+                                <color key="backgroundColor" red="1" green="0.86923315830000003" blue="0.91648865310000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXl-il-bRQ">
+                                <rect key="frame" x="59" y="214" width="97" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Find!"/>
+                                <connections>
+                                    <action selector="wordButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZhD-Vl-NXF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.90162060821913004" green="0.96548391878890738" blue="0.9831879734992981" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hAf-CS-z7B" secondAttribute="trailing" constant="303" id="1Rw-Ew-C4y"/>
+                            <constraint firstItem="gML-dU-2bd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="59" id="1be-sy-fyB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vlr-02-Wjr" secondAttribute="trailing" constant="117" id="41g-Nq-Z4i"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gML-dU-2bd" secondAttribute="trailing" constant="78" id="6WL-MA-J8G"/>
+                            <constraint firstItem="hAf-CS-z7B" firstAttribute="top" secondItem="OqT-Tz-9pq" secondAttribute="bottom" constant="27" id="6ks-bq-WxV"/>
+                            <constraint firstItem="IXl-il-bRQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="59" id="CXO-Pa-g7A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5Jg-Zp-aEJ" secondAttribute="bottom" constant="293.66666666666674" id="Ccc-df-X6u"/>
+                            <constraint firstItem="i4Q-Ke-jbJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="Cig-18-HcX"/>
+                            <constraint firstItem="OqT-Tz-9pq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="DRJ-re-BNo"/>
+                            <constraint firstItem="Qu6-PF-Dt9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="123" id="DjV-2s-nL1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tcF-OL-h7L" secondAttribute="trailing" constant="234" id="FYa-ga-yG6"/>
+                            <constraint firstItem="vlr-02-Wjr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="368" id="GHe-OF-rw1"/>
+                            <constraint firstItem="tcF-OL-h7L" firstAttribute="top" secondItem="Qu6-PF-Dt9" secondAttribute="bottom" constant="52" id="LON-7d-GRK"/>
+                            <constraint firstItem="gML-dU-2bd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="225" id="MtE-Cp-NiX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i4Q-Ke-jbJ" secondAttribute="trailing" constant="8" id="PGf-C5-fhl"/>
+                            <constraint firstItem="5Jg-Zp-aEJ" firstAttribute="top" secondItem="vlr-02-Wjr" secondAttribute="bottom" constant="49.333333333333258" id="TnU-W5-GIb"/>
+                            <constraint firstItem="Qu6-PF-Dt9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="27" id="U2r-Wm-SVU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="i4Q-Ke-jbJ" secondAttribute="bottom" constant="15" id="WWF-ei-hSw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OqT-Tz-9pq" secondAttribute="trailing" constant="32" id="d4j-Th-XSD"/>
+                            <constraint firstItem="IXl-il-bRQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="170" id="iAt-vn-W2S"/>
+                            <constraint firstItem="hAf-CS-z7B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="jRh-nz-RlW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IXl-il-bRQ" secondAttribute="trailing" constant="258" id="jc2-In-dyB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Jg-Zp-aEJ" secondAttribute="trailing" constant="32" id="jiL-BQ-vqC"/>
+                            <constraint firstItem="5Jg-Zp-aEJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="lQl-gW-zxt"/>
+                            <constraint firstItem="vlr-02-Wjr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="118" id="p3t-Zm-aJf"/>
+                            <constraint firstItem="tcF-OL-h7L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="59" id="p8e-uU-zJc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qu6-PF-Dt9" secondAttribute="trailing" constant="99" id="tc0-67-cQO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gML-dU-2bd" secondAttribute="bottom" constant="421" id="wJJ-yo-FDA"/>
+                            <constraint firstItem="OqT-Tz-9pq" firstAttribute="top" secondItem="5Jg-Zp-aEJ" secondAttribute="bottom" constant="42.5" id="x6K-cH-4fS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sentence1" destination="5Jg-Zp-aEJ" id="1lq-lX-yot"/>
+                        <outlet property="sentence2" destination="OqT-Tz-9pq" id="sPd-ye-lhu"/>
+                        <outlet property="similarSentButton" destination="hAf-CS-z7B" id="ZRw-US-VGF"/>
+                        <outlet property="similarSentText" destination="i4Q-Ke-jbJ" id="5YB-9f-G4A"/>
+                        <outlet property="similarWordsButton" destination="IXl-il-bRQ" id="jN2-81-igz"/>
+                        <outlet property="similarWordsText" destination="gML-dU-2bd" id="zfG-bv-NEj"/>
+                        <outlet property="word1" destination="tcF-OL-h7L" id="Cxi-Dq-NTh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.46153846153846" y="81.042654028436019"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
