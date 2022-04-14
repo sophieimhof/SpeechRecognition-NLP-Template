@@ -133,6 +133,8 @@ class SpeechRecognizer: ObservableObject {
     }
     
     //set transcript
+    
+    
     private func speak(_ message: String) {
         let tokenizer = NLTokenizer(unit: unit)
         tokenizer.string = message
@@ -142,6 +144,7 @@ class SpeechRecognizer: ObservableObject {
             tokens.append(String(text[tokenRange].lowercased()))
             
         transcript = tokens[0]
+        }
     }
     
     //display error in transcipt if one occurs

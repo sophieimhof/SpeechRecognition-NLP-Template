@@ -21,13 +21,11 @@ class ViewController: UIViewController {
     @IBAction func buttonPressed(_ sender: UIButton) {
         if (!recordOn) { //if not currently recording audio
             speechRec.transcribe() //transcibe audio
-            buttonColor = textProc.findClosestColor(word: speechRec.transcript)
             
             recordOn = true //change record button to be set as on
             sender.setTitle("stop", for: .normal) //change button title to stop
         } else { //if currently recording
             speechRec.stopTranscribing() //stop transcription
-            buttonColor = textProc.findClosestColor(word: speechRec.transcript)
             recordOn = false //change record button to be set as off
             sender.setTitle("say 1 word", for: .normal) //change button title back to record
         }
