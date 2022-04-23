@@ -133,18 +133,9 @@ class SpeechRecognizer: ObservableObject {
     }
     
     //set transcript
-    
-    
     private func speak(_ message: String) {
-        let tokenizer = NLTokenizer(unit: unit)
-        tokenizer.string = message
-        
-        var tokens = [String]()
-        tokenizer.enumerateTokens(in: text.startIndex..<text.endIndex) { (tokenRange, _) -> Bool in
-            tokens.append(String(text[tokenRange].lowercased()))
-            
+        let tokens = retrieveTokens(from: message)
         transcript = tokens[0]
-        }
     }
     
     //display error in transcipt if one occurs
