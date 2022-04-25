@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         } else { //if currently recording
             speechRec.stopTranscribing() //stop transcription
             //transText.text = speechRec.transcript //set transciption text
-            posDict = posProc.findPartsOfSpeech(text: speechRec.transcript)
+            posDict = posProc.findPartsOfSpeech(text: speechRec.transcript) //get parts of speec for each word
             print(posDict)
             transText.numberOfLines = 0
            
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
             }
             output = output + "\n"
         }
-        return output
+        return output //get words and parts of speech values in format to be displayed
     }
     
 }
